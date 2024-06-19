@@ -28,7 +28,7 @@
     color:black
 }
 
-.answer, .or {
+.answer, .or, .and {
     position: absolute;
     top: -5px;
 }
@@ -54,4 +54,8 @@ button:hover{
 
 .or {
     left: 120px;
+}
+
+.and {
+    left: 450px;
 }

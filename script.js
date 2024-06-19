@@ -2,6 +2,8 @@ const answerTemplate = "<i>Пример ответа: </i>\"3)\".\n\n\\(1)\\) \\
 
 const logicalOr = "\\left[\\begin{array}{l}\n\n\\\\\n\n\\end{array}\\right.";
 
+const logicalAnd = "\\begin{cases}\n\n\\\\\n\n\\end{cases}";
+
 function copy(arg) {
     navigator.clipboard.writeText(arg);
 };
@@ -12,4 +14,8 @@ function handleCopyAnswerTemplate() {
 
 function handleCopyLogicalOr() {
     copy(logicalOr);
+};
+
+function handleCopyLogicalAnd() {
+    copy(logicalAnd);
 };
