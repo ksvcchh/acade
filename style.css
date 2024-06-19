@@ -28,7 +28,7 @@
     color:black
 }
 
-.answer, .or, .and {
+.answer, .or, .and, .yesNo {
     position: absolute;
     top: -5px;
 }
@@ -57,5 +57,9 @@ button:hover{
 }
 
 .and {
-    left: 450px;
+    left: 430px;
+}
+
+.yesNo {
+    left: 540px;
 }

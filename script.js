@@ -4,6 +4,8 @@ const logicalOr = "\\left[\\begin{array}{l}\n\n\\\\\n\n\\end{array}\\right.";
 
 const logicalAnd = "\\begin{cases}\n\n\\\\\n\n\\end{cases}";
 
+const YesNo = "<i>В ответ введите </i>\"да\"<i> либо </i>\"нет\".";
+
 function copy(arg) {
     navigator.clipboard.writeText(arg);
 };
@@ -18,4 +20,8 @@ function handleCopyLogicalOr() {
 
 function handleCopyLogicalAnd() {
     copy(logicalAnd);
+};
+
+function handleCopyYesNo() {
+    copy(YesNo);
 };
