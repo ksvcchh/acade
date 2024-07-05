@@ -25,3 +25,14 @@ function handleCopyLogicalAnd() {
 function handleCopyYesNo() {
     copy(YesNo);
 };
+
+function checkBooks() {
+    function currBooks() {
+        let BooksParser = document.querySelectorAll('.item');
+        let listOfDownloadedBooks = [...BooksParser].map((elem) =>
+            elem.innerHTML.split("\"")[1].split("\/")[2]);
+        console.log(listOfDownloadedBooks);
+    }
+
+    shouldBeBooks();
+}
