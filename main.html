@@ -21,9 +21,20 @@
         <div class = "and" id = "and">
             <button onclick = "handleCopyLogicalAnd()">Система<br>жопа</button>
         </div>
-        <div class = "yesNo" id = "yesNo">
-            <button onclick = "handleCopyYesNo()">Да либо Нет</button>
+
+        <div class = "inlineWrapper">
+            <div class = "yesNo" id = "yesNo">
+                <button onclick = "handleCopyYesNo()">Да либо Нет</button>
+            </div>
+            <div class = "newPageDiv">
+                <button onclick = "touchNewPageButton()" id="newPageStatus">В той же вкладке</button>
+            </div>
         </div>
+
+        <label>
+            <input type="checkbox" id="newPage">
+        </label>
+    </div>
 
     </div>
     <div class = "hujnia">
