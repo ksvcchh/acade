@@ -67,6 +67,11 @@ window.addEventListener('DOMContentLoaded', function() {
     }
 
     function isValidBook(nodeList, book) {
+
+        if (book.startsWith("http")) {
+            window.open(book);
+            return true;
+        }
         
         if (book == "Алгебра 9 класс. Л. Г. Петерсон. Часть 1 и 2") {
             const part = prompt("Какая часть?")
