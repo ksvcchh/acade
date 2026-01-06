@@ -5,20 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>учебники чурко</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script> 
+    <script src="script.js"></script>
 </head>
 <body>
     <div id="notification" class="notification">Нет такого учебника, чурка!</div>
     <div class = "container1">
         <div class = "answer" id = "answer">
-            <button onclick = "handleCopyAnswerTemplate()">Пример<br>ответа</button>
+            <button onclick = "copyDrug()">Спроси у<br>друга</button>
         </div>
         <div class = "or" id = "or">
             <button onclick = "handleCopyLogicalOr()">Квадратная<br>скобка</button>
         </div>
+        <div class = "or" id = "or">
+            <button onclick = "handleCopyFractures()">Формат<br>Дроби</button>
+        </div>
 
         <div class = "hdr">Общие</div>
-        
+
+        <div class = "func" id = "func">
+            <button onclick = "handleCopyFunctionBuild()">Построение<br>функции</button>
+        </div>
+
         <div class = "and" id = "and">
             <button onclick = "handleCopyLogicalAnd()">Система<br>жопа</button>
         </div>
@@ -55,6 +62,7 @@
         <div class = "item"><a href="./учебники/Методичка по теме «Рациональные неравенства». Лифиц.pdf">Лиф рац нер</a></div>
         <div class = "item"><a href="./учебники/Методичка по теме «Нелинейные системы уравнений». Лифиц.pdf">Лиф нел сис</a></div>
         <div class = "item"><a href="./учебники/Методичка по теме «Тригонометрические функции-I». Лифиц.pdf">Лиф триг 1</a></div>
+        <div class = "item"><a href="./учебники/Методичка по теме «Тригонометрические функции-I». Лифиц.pdf">Лиф триг 1</a></div>
     </div>
     <div class = "byebye">----------------------------------------------</div>
 
@@ -85,7 +93,7 @@
         <div class = "item"><a href="./учебники/Контрольные и самостоятельные работы по алгебре. 9 класс. М. А. Попов.pdf">9 Попов</a></div>
         <div class = "item"><a href="./учебники/Алгебра. 9 класс. Тестовые материалы для оценки качества обучения - Крайнева Л.Б..pdf">9 Крайнева</a></div>
         <div class = "item"><a href="./учебники/Алгебра 9 класс. Контрольные работы в новом формате. Г. Д. Карташева.pdf">9 Карташева</a></div>
-        <div class = "item"><a href="./учебники/1145-algebra.-tematich.-testy.-9kl._dudnicyn-krongauz_2011-95s.pdf">9 Дудницын</a></div>
+        <div class = "item"><a href="./учебники/Алгебра. Тематические тесты. 9 класс - Дудницын Ю.П., Кронгауз В.Л..pdf">9 Дудницын</a></div>
         <div class = "item"><a href="./учебники/Алгебра. 9 класс. Подготовка к государственной итоговой аттестации. Лысенко Ф.Ф..pdf">9 Лысенко</a></div>
         <div class = "item"><a href="./учебники/Математика. 9 класс. Краткий курс (алгебра, элементы статистики и теории вероятностей). - Шевелева Н.В..pdf">9 Шевелева</a></div>
         <div class = "item"><a href="./учебники/Дидактические материалы. Алгебра 9 класс. Г. С. Сурвилло.pdf">9 Сурвилло</a></div>
@@ -99,8 +107,11 @@
         <div class = "item"><a href="./учебники/9 класс, Шыныбеков.pdf">436 Шыны</a></div>
         <div class = "item"><a href="./учебники/9 класс, Абылкасымова, 1 часть.pdf">433 Абылкас</a></div>
         <div class = "item"><a href="./учебники/9 класс, Абылкасымова, 2 часть.pdf">434 Абылкас</a></div>
-        <div class = "item"><a href="./учебники/Методички ЗФТШ МФТИ, 9-ый класс. Планиметрия (часть II). Задание №5.pdf">ЗФТШ план</a></div>
+        <div class = "item"><a href="./учебники/Методички ЗФТШ МФТИ, 9-ый класс. Планиметрия (часть II). Задание №5.pdf">ЗФТШ план 2</a></div>
         <div class = "item"><a href="./учебники/Методички ЗФТШ МФТИ, 9-ый класс. Квадратные уравнения. Многочлены. Задание №2..pdf">ЗФТШ квадр</a></div>
+        <div class = "item"><a href="./учебники/Методички ЗФТШ МФТИ, 9-ый класс. Планиметрия (часть I). Задание №1.pdf">ЗФТШ план 1</a></div>
+        <div class = "item"><a href="./учебники/Методички ЗФТШ МФТИ, 9-ый класс. Элементы теории множеств. Элементы логики. Задание №6.pdf">ЗФТШ множе</a></div>
+
     </div>
     <div class = "byebye">----------------------------------------------</div>
 
@@ -135,7 +146,7 @@
         <div class = "item"><a href="./учебники/Тесты по алгебре к учебнику А. Г. Мордковича. 8 класс.pdf">Тесты Мордк</a></div>
     </div>
     <div class = "byebye">----------------------------------------------</div>
-    
+
     <div class = "hdr">7 Класс</div>
     <div class = "semKlass">
         <div class = "item"><a href="./учебники/Алгебра 7-ой класс. Кузнецова.pdf">7 Кузнецова</a></div>
@@ -193,6 +204,10 @@
 
     </div>
 
+    <div class="stasya">
+        <button onclick = "handleCopyAnswerTemplate()">Пример<br>ответа</button>
+    </div>
+
     <div class = "wrapper">
         <div class = "entity">
             <a href="https://www.desmos.com/calculator" target="_blank"><button id = "button_1">Десмос</button></a>
@@ -203,6 +218,10 @@
         <div class = "entity">
             <a href="https://www.math-solution.ru/math-task/inequality" target="_blank"><button id = "button_3">Интервалы</button></a>
         </div>
+    </div>
+
+    <div class="pengvik">
+        <img src="./учебники/giphy.gif">
     </div>
 </body>
 </html>
