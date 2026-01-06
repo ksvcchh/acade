@@ -3,225 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>учебники чурко</title>
+    <title>учебники 7-9</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 <body>
-    <div id="notification" class="notification">Нет такого учебника, чурка!</div>
-    <div class = "container1">
-        <div class = "answer" id = "answer">
-            <button onclick = "copyDrug()">Спроси у<br>друга</button>
-        </div>
-        <div class = "or" id = "or">
-            <button onclick = "handleCopyLogicalOr()">Квадратная<br>скобка</button>
-        </div>
-        <div class = "or" id = "or">
-            <button onclick = "handleCopyFractures()">Формат<br>Дроби</button>
-        </div>
+    <div id="notification" class="notification">Нет такого учебника!</div>
 
-        <div class = "hdr">Общие</div>
-
-        <div class = "func" id = "func">
-            <button onclick = "handleCopyFunctionBuild()">Построение<br>функции</button>
+    <div class="top-bar">
+        <button id="newPageStatus">В той же вкладке</button>
+        <div class="dropdown">
+            <button id="graphs-btn">Построение</button>
+            <div id="graphs-menu" class="dropdown-menu"></div>
         </div>
-
-        <div class = "and" id = "and">
-            <button onclick = "handleCopyLogicalAnd()">Система<br>жопа</button>
+        <div class="dropdown">
+            <button id="drawings-btn">Чертежи</button>
+            <div id="drawings-menu" class="dropdown-menu"></div>
         </div>
+        <div class="config-buttons">
+            <button id="export-config-btn" title="Экспорт конфигурации">Экспорт</button>
+            <button id="import-config-btn" title="Импорт конфигурации">Импорт</button>
+            <input type="file" id="import-file-input" accept=".json" style="display: none;">
+        </div>
+    </div>
 
-        <div class = "inlineWrapper">
-            <div class = "yesNo" id = "yesNo">
-                <button onclick = "handleCopyYesNo()">Да либо Нет</button>
+    <div class="main-content">
+        <div id="buttons-container"></div>
+        <div class="buttons-actions">
+            <button id="add-button-btn">+</button>
+            <button id="edit-mode-btn">Изменить расположение</button>
+        </div>
+    </div>
+
+    <div id="button-editor-modal" class="modal">
+        <div class="modal-content">
+            <h3 id="modal-title">Новая кнопка</h3>
+            <label>Название:</label>
+            <input type="text" id="button-name-input" placeholder="Название кнопки">
+            <label>Содержимое:</label>
+            <textarea id="button-content-input" placeholder="Текст для копирования"></textarea>
+            <div class="modal-buttons">
+                <button id="save-button-btn">Сохранить</button>
+                <button id="cancel-button-btn">Отмена</button>
+                <button id="delete-button-btn" class="delete-btn">Удалить</button>
             </div>
-            <div class = "newPageDiv">
-                <button onclick = "touchNewPageButton()" id="newPageStatus">В той же вкладке</button>
+        </div>
+    </div>
+
+    <div id="graphs-editor-modal" class="modal">
+        <div class="modal-content">
+            <h3 id="graphs-modal-title">Новый элемент</h3>
+            <label>Название:</label>
+            <input type="text" id="graphs-name-input" placeholder="Название">
+            <label>Содержимое:</label>
+            <textarea id="graphs-content-input" placeholder="Текст для копирования"></textarea>
+            <div class="modal-buttons">
+                <button id="save-graphs-btn">Сохранить</button>
+                <button id="cancel-graphs-btn">Отмена</button>
+                <button id="delete-graphs-btn" class="delete-btn">Удалить</button>
             </div>
         </div>
-
-        <label>
-            <input type="checkbox" id="newPage">
-        </label>
     </div>
 
-    </div>
-    <div class = "hujnia">
-        <div class = "item"><a href="./учебники/Большой справочник для школьников и поступающих в ВУЗы, Аверьянов.pdf">Аверьянов</a></div>
-        <div class = "item"><a href="./учебники/Сборник задач по алгебре. 8-9 классы. Галицкий.pdf">Галицкий</a></div>
-        <div class = "item"><a href="./учебники/Сборник задач по алгебре для 8-9 углубленный Галицкий.pdf">Галицкий углуб</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. Сборник 6-7 класс. Ларичев.pdf">Ларичев</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. Тесты для промежуточной аттестации. 7-8 класс. Ф.Ф. Лысенко.pdf">Лысенко</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 7-8 классы. Лысенко Ф.Ф., Кулабухова С.Ю. Тренажер. Тематические тесты и итоговые работы..pdf">Лысе Кулаб</a></div>
-        <div class = "item"><a href="./учебники/Пособие по Олимпиадной Математике, уровень А1. Бабичева.pdf">Бабичева</a></div>
-        <div class = "item"><a href="./учебники/Олимпиадная математика. Логические задачи. 5-7 класс. Золотарева.pdf">Золотарева</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 7-9 класс. Бевз.pdf">Бевз</a></div>
-        <div class = "item"><a href="./учебники/Справочник по математике. 5-9 классы. Томилина.pdf">Томилина</a></div>
-        <div class = "item"><a href="./учебники/Тригонометрические выражения и их преобразования. Макарычев.pdf">Макарычев</a></div>
-        <div class = "item"><a href="./учебники/Сборник задач по Алгебре 7-9. Арефьева.pdf">7-9 Ареф</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. Гельфанд.pdf">Гельфанд</a></div>
-        <div class = "item"><a href="./учебники/Методичка по теме «Рациональные неравенства». Лифиц.pdf">Лиф рац нер</a></div>
-        <div class = "item"><a href="./учебники/Методичка по теме «Нелинейные системы уравнений». Лифиц.pdf">Лиф нел сис</a></div>
-        <div class = "item"><a href="./учебники/Методичка по теме «Тригонометрические функции-I». Лифиц.pdf">Лиф триг 1</a></div>
-        <div class = "item"><a href="./учебники/Методичка по теме «Тригонометрические функции-I». Лифиц.pdf">Лиф триг 1</a></div>
-    </div>
-    <div class = "byebye">----------------------------------------------</div>
-
-    <div class = "hdr">9 Класс</div>
-    <div class = "devKlass">
-        <div class = "item"><a href="./учебники/Алгебра 9-ый класс. Кузнецова.pdf">9 Кузнецова</a></div>
-        <div class = "item"><a href="./учебники/Контрольные и самостоятельные работы по алгебре и геометрии. 9 класс - Журавлев С.Г..pdf">9 Журавлёв</a></div>
-        <div class = "item"><a href="./учебники/Контрольные измерительные материалы. Алгебра 9 класс. Ю. А. Глазков.pdf">9 Глазков</a></div>
-        <div class = "item"><a href="./учебники/Алгебра 9 класс. Л. Г. Петерсон. Часть 1.pdf">9 Петерсон 1</a></div>
-        <div class = "item"><a href="./учебники/Алгебра 9 класс. Л. Г. Петерсон. Часть 2.pdf">9 Петерсон 2</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 9 класс. Дидактические материалы - Ткачева М.В., Федорова Н.Е., Шабунин М.И..pdf">9 Ткачева</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 9 класс. Поляков, Мерзляк.pdf">9 Мерзляк</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 9 класс. Тематические тесты - Чулков П.В., Струков Т.С..pdf">9 Чулков</a></div>
-        <div class = "item"><a href="./учебники/Алгебра 9-ый класс. Дорофеев.pdf">9 Дорофеев</a></div>
-        <div class = "item"><a href="./учебники/Алгебра 9 класс. С. М. Никольский.pdf">9 Никол</a></div>
-        <div class = "item"><a href="./учебники/Дидактические материалы по алгебре. 9 класс - Уединов А.Б., Чулков П.В..pdf">9 Уебанов</a></div>
-        <div class = "item"><a href="./учебники/Алгебра 9-ый класс. Кравчук.pdf">9 Кравчук</a></div>
-        <div class = "item"><a href="./учебники/Алгебра 9 класс. Алимов (2).pdf">9 Алимов</a></div>
-        <div class = "item"><a href="./учебники/Алгебра, 9 класс, Солтан.pdf">9 Солтан</a></div>
-        <div class = "item"><a href="./учебники/Дидактические материалы по алгебре. 9 класс. Л. И. Звавич.pdf">9 Звавич</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. Дидактические материалы. 9 класс - Потапов М.К., Шевкин А.В..pdf">9 Потапов</a></div>
-        <div class = "item"><a href="./учебники/Дидактические материалы по алгебре для 9 класса - Зив Б.Г., Гольдич В.А. (2013).pdf">9 Зив</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 9 класс. Дидактические материалы - Феоктистов И.Е..pdf">9 Феокти</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 9 класс. Учебник - Рубин А.Г. Чулков П.В..pdf">9 Рубин</a></div>
-        <div class = "item"><a href="./учебники/Тесты по алгебре. 9 класс. Е. М. Ключникова.pdf">9 Ключнико</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 9 класс. Истер.pdf">9 Истер</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. Дидактические материалы. 9 класс. Л. П. Евстафьева.pdf">9 Евстаф</a></div>
-        <div class = "item"><a href="./учебники/Контрольные и самостоятельные работы по алгебре. 9 класс. М. А. Попов.pdf">9 Попов</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 9 класс. Тестовые материалы для оценки качества обучения - Крайнева Л.Б..pdf">9 Крайнева</a></div>
-        <div class = "item"><a href="./учебники/Алгебра 9 класс. Контрольные работы в новом формате. Г. Д. Карташева.pdf">9 Карташева</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. Тематические тесты. 9 класс - Дудницын Ю.П., Кронгауз В.Л..pdf">9 Дудницын</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 9 класс. Подготовка к государственной итоговой аттестации. Лысенко Ф.Ф..pdf">9 Лысенко</a></div>
-        <div class = "item"><a href="./учебники/Математика. 9 класс. Краткий курс (алгебра, элементы статистики и теории вероятностей). - Шевелева Н.В..pdf">9 Шевелева</a></div>
-        <div class = "item"><a href="./учебники/Дидактические материалы. Алгебра 9 класс. Г. С. Сурвилло.pdf">9 Сурвилло</a></div>
-        <div class = "item"><a href="./учебники/Алгебра 9 класс. Задания для обычения и развития учащихся. Е. А. Лебединцева.pdf">9 Лебединц</a></div>
-        <div class = "item"><a href="./учебники/Алгебра 9-ый класс. Мордкович 1 часть.pdf">Мордк теор</a></div>
-        <div class = "item"><a href="./учебники/Алгебра 9-ый класс. Мордкович 2 часть.pdf">Мордк практ</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 9 класс. Самостоятельные и контрольные работы - Мерзляк А.Г..pdf">Сам Мерзл</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 9 класс. Тематические тесты - Кузнецова Л.В..pdf">Тесты Кузне</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 9 класс. Тематические тесты - Ткачева М.В..pdf">Тесты Ткач</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 9 класс. Алимов.pdf">9 хач Али</a></div>
-        <div class = "item"><a href="./учебники/9 класс, Шыныбеков.pdf">436 Шыны</a></div>
-        <div class = "item"><a href="./учебники/9 класс, Абылкасымова, 1 часть.pdf">433 Абылкас</a></div>
-        <div class = "item"><a href="./учебники/9 класс, Абылкасымова, 2 часть.pdf">434 Абылкас</a></div>
-        <div class = "item"><a href="./учебники/Методички ЗФТШ МФТИ, 9-ый класс. Планиметрия (часть II). Задание №5.pdf">ЗФТШ план 2</a></div>
-        <div class = "item"><a href="./учебники/Методички ЗФТШ МФТИ, 9-ый класс. Квадратные уравнения. Многочлены. Задание №2..pdf">ЗФТШ квадр</a></div>
-        <div class = "item"><a href="./учебники/Методички ЗФТШ МФТИ, 9-ый класс. Планиметрия (часть I). Задание №1.pdf">ЗФТШ план 1</a></div>
-        <div class = "item"><a href="./учебники/Методички ЗФТШ МФТИ, 9-ый класс. Элементы теории множеств. Элементы логики. Задание №6.pdf">ЗФТШ множе</a></div>
-
-    </div>
-    <div class = "byebye">----------------------------------------------</div>
-
-    <div class = "hdr">8 Класс</div>
-    <div class = "vosKlass">
-        <div class = "item"><a href="./учебники/Алгебра 8-ой класс. Кузнецова.pdf">8 Кузнецова</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 8 класс. Задачник. Мордкович..pdf">8 Мордк зад</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 8 класс. Петерсон. 1 часть.pdf">8 Петерсон 1</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 8 класс. Петерсон. 2 часть.pdf">8 Петерсон 2</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 8 класс. Петерсон. 3 часть.pdf">8 Петерсон 3</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 8 класс. 208 диагностических вариантов - Панарина В.И..pdf">8 Панарина</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 8 класс. Кравчук.pdf">8 Кравчук</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 8 класс. Никольский.pdf">8 Никол</a></div>
-        <div class = "item"><a href="./учебники/Алгебра 8 класс. Итоговая аттестация. Тематические тестовые задания. Ю.А. Глазков.pdf">8 Глазков</a></div>
-        <div class = "item"><a href="./учебники/Алгебра 8 класс. Виленкин.pdf">8 Виленкин</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 8 класс. Зив Б.Г., Гольдич В.А. Дидактические материалы.pdf">8 Зив</a></div>
-        <div class = "item"><a href="./учебники/Контрольные и самостоятельные работы по алгебре и геометрии. 8 класс - Журавлев С.Г. и др..pdf">8 Журавлёв</a></div>
-        <div class = "item"><a href="./учебники/Алгебра 8 класс. Алимов (2).pdf">8 Алимов</a></div>
-        <div class = "item"><a href="./учебники/Алгебра 8 класс тематические тесты. П. В. Чулков.pdf">8 Чулков</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 8 класс. Промежуточное тестирование - Ключникова Е.М., Комиссарова И.В..pdf">8 Ключни</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 8 класс. Тестовые задания к основным учебникам. Рабочая тетрадь - Кочагин В.В..pdf">8 Кочагин</a></div>
-        <div class = "item"><a href="./учебники/Тестовые материалы для оценки качества обучения. Алгебра 8 класс. И. Л. Гусева.pdf">8 Гусева</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. Абылкасымова 8.pdf">8 Абылкас</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. Солтан 8.pdf">8 Солтан</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. Рыскельдиева 8, 1 часть.pdf">8 Рыскел 1</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. Рыскельдиева 8, 2 часть.pdf">8 Рыскел 2</a></div>
-        <div class = "item"><a href="./учебники/Тесты по алгебре к учебнику С. М. Никольского. 8 класс.pdf">8 Ник тест</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 8 класс. Контрольные измерительные материалы. Глазков Ю.А., Гаиашвили М.Я..pdf">Ким Глазков</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 8 класс. КИМы к учебнику - Черноруцкий В.В..pdf">Ким Чернор</a></div>
-        <div class = "item"><a href="./учебники/Алгебра 8 класс. Углубленный. Мордкович 1 часть.pdf">Теор Мордк</a></div>
-        <div class = "item"><a href="./учебники/Алгебра 8 класс. Углубленный. Мордкович 2 часть.pdf">Практ Мордк</a></div>
-        <div class = "item"><a href="./учебники/Тесты по алгебре к учебнику А. Г. Мордковича. 8 класс.pdf">Тесты Мордк</a></div>
-    </div>
-    <div class = "byebye">----------------------------------------------</div>
-
-    <div class = "hdr">7 Класс</div>
-    <div class = "semKlass">
-        <div class = "item"><a href="./учебники/Алгебра 7-ой класс. Кузнецова.pdf">7 Кузнецова</a></div>
-        <div class = "item"><a href="./учебники/Математика 7-ой класс. Петерсон, 1 часть.pdf">7 Петерсон 1</a></div>
-        <div class = "item"><a href="./учебники/Математика 7-ой класс. Петерсон, 2 часть.pdf">7 Петерсон 2</a></div>
-        <div class = "item"><a href="./учебники/Математика 7-ой класс. Петерсон, 3 часть.pdf">7 Петерсон 3</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 7 класс. Мерзляк. Самостоятельные и контрольные работы.pdf">7 Мерзл сам</a></div>
-        <div class = "item"><a href="./учебники/Дидактические материалы по алгебре для 7 класса. Б.Г. Зив. В.А. Гольдич.pdf">7 Зив</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 7 класс. Потапов К.В., Шевкин А.В. Рабочая тетрадь.pdf">7 Потапов</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 7 класс. Шыныбеков.pdf">7 Шыны</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 7 класс. Чулков. Тематические тесты.pdf">7 Чулков</a></div>
-        <div class = "item"><a href="./учебники/Тесты по алгебре. 7 класс. Журавлев С.Г..pdf">7 Журавлёв</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 7 класс. Муравин, Муравина..pdf">7 Муравин</a></div>
-        <div class = "item"><a href="./учебники/Алгебра 7 класс. Алимов (2).pdf">7 Алимов</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 7 класс. Макарычева. Контрольно-измерительные материалы.pdf">7 Макарыче</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 7 класс. Ключникова Е.М., Комиссарова И.В. Промежуточное тестирование.pdf">7 Ключнико</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 7 класс. Тематические тесты. Промежуточная аттестация. Лысенко Ф.Ф., Кулабухова С.Ю..pdf">7 Лысенко</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 7 класс. Рурукин А.Н. Самостоятельные и контрольные работы.pdf">7 Рурукин</a></div>
-        <div class = "item"><a href="./учебники/Контрольные работы по Алгебре 7 класс. Ю.П. Дудницын. В.Л. Кронгауз.pdf">7 Дудницын</a></div>
-        <div class = "item"><a href="./учебники/Алгебра 7 класс. Донец Л.П. Готовимся к ГИА..pdf">7 Донец</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 7 класс. Абылкасымова..pdf">7 Абылкас</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. Забара 7, 1 часть.pdf">7 Забара 1</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. Забара 7, 2 часть.pdf">7 Забара 2</a></div>
-        <div class = "item"><a href="./учебники/Математика, 7 класс, Козлов..pdf">7 Козлов</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. 7 класс. М. В. Ткачева. Тематические тесты.pdf">7 Ткачева</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. Тематические тесты 7.pdf">7 Темат</a></div>
-        <div class = "item"><a href="./учебники/Математический кружок 7 класс. Спивак.pdf">7 Спивак</a></div>
-        <div class = "item"><a href="./учебники/Алгебра. Поурочные тесты 7, 2 часть.pdf">7 Поуроч, 2</a></div>
-    </div>
-    <div class = "byebye">----------------------------------------------</div>
-
-    <div class = "hdr">Геома</div>
-    <div class = "geoma">
-        <div class = "item"><a href="./учебники/Геометрия 7-9. Рабинович.pdf">Рабинович</a></div>
-        <div class = "item"><a href="./учебники/Геометрия. Планиметрия. 7-9 классы. Гордин.pdf">Гордин</a></div>
-        <div class = "item"><a href="./учебники/Геометрия 9-ый класс. Апостолова.pdf">9 Апостолова</a></div>
-        <div class = "item"><a href="./учебники/Геометрия. Смирнов 9.pdf">9 Смирнов</a></div>
-        <div class = "item"><a href="./учебники/Геометрия. 9 класс. Шлыков.pdf">9 Шлыков</a></div>
-        <div class = "item"><a href="./учебники/Геометрия 9-ый класс. Казаков.pdf">9 Казаков</a></div>
-        <div class = "item"><a href="./учебники/Наглядная Геометрия 9-ой класс Казаков.pdf">9 нагл</a></div>
-        <div class = "item"><a href="./учебники/Геометрия. Солтан 9.pdf">9 Солтан</a></div>
-        <div class = "item"><a href="./учебники/Геометрия. 8 класс. Шлыков.pdf">8 Шлыков</a></div>
-        <div class = "item"><a href="./учебники/Геометрия 8-ой класс. Казаков.pdf">8 Казаков</a></div>
-        <div class = "item"><a href="./учебники/Наглядная Геометрия 8-ой класс Казаков.pdf">8 нагл</a></div>
-        <div class = "item"><a href="./учебники/Геометрия. Смирнов 8.pdf">8 Смирнов</a></div>
-        <div class = "item"><a href="./учебники/Геометрия. Тематические тесты 7.pdf">7 Темат</a></div>
-        <div class = "item"><a href="./учебники/Геометрия. 7 класс. Шлыков.pdf">7 Шлыков</a></div>
-        <div class = "item"><a href="./учебники/Геометрия 7-ой класс. Казаков.pdf">7 Казаков</a></div>
-        <div class = "item"><a href="./учебники/Наглядная Геометрия 7-ой класс Казаков.pdf">7 нагл</a></div>
-        <div class = "item"><a href="./учебники/Геометрия. Орехова 7, задачи на готовых чертежах.pdf">7 Орехова</a></div>
-        <div class = "item"><a href="./учебники/Геометрия. Блинков 7, часть 1.pdf">7 Блинков 1</a></div>
-        <div class = "item"><a href="./учебники/Геометрия. Блинков 7, часть 2.pdf">7 Блинков 2</a></div>
-        <div class = "item"><a href="./учебники/Геометрия. Поурочные тесты 7.pdf">7 Поуроч</a></div>
-        <div class = "item"><a href="./учебники/"></a></div>
-
-    </div>
-
-    <div class="stasya">
-        <button onclick = "handleCopyAnswerTemplate()">Пример<br>ответа</button>
-    </div>
-
-    <div class = "wrapper">
-        <div class = "entity">
-            <a href="https://www.desmos.com/calculator" target="_blank"><button id = "button_1">Десмос</button></a>
-        </div>
-        <div class = "entity">
-            <a href="https://www.geogebra.org/calculator" target="_blank"><button id = "button_2">Геобебра</button></a>
-        </div>
-        <div class = "entity">
-            <a href="https://www.math-solution.ru/math-task/inequality" target="_blank"><button id = "button_3">Интервалы</button></a>
+    <div id="drawings-editor-modal" class="modal">
+        <div class="modal-content">
+            <h3 id="drawings-modal-title">Новый элемент</h3>
+            <label>Название:</label>
+            <input type="text" id="drawings-name-input" placeholder="Название ссылки">
+            <label>URL:</label>
+            <input type="text" id="drawings-url-input" placeholder="https://...">
+            <div class="modal-buttons">
+                <button id="save-drawings-btn">Сохранить</button>
+                <button id="cancel-drawings-btn">Отмена</button>
+                <button id="delete-drawings-btn" class="delete-btn">Удалить</button>
+            </div>
         </div>
     </div>
 
-    <div class="pengvik">
-        <img src="./учебники/giphy.gif">
+    <div class="bottom-bar">
+        <a href="https://www.desmos.com/calculator" target="_blank"><button>Десмос</button></a>
+        <a href="https://www.geogebra.org/calculator" target="_blank"><button>Геогебра</button></a>
+        <a href="https://www.math-solution.ru/math-task/inequality" target="_blank"><button>Интервалы</button></a>
     </div>
+
+    <div class="gif-container">
+        <img src="./учебники/giphy.gif" alt="">
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
